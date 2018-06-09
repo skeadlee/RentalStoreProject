@@ -1,29 +1,21 @@
 require('sinatra')
 require('sinatra/contrib/all')
 require('pry')
-require_relative('./models/customer')
-also_reload('models/*')
-
-configure do
-  enable :method_override
-end
-
-get '/' do #home page view
-  erb( :home )
-end
+require_relative('../models/customer')
+also_reload('../models/*')
 
 get '/customers' do #view all customers
   @customers = Customer.all()
-  erb( :customers )
+  erb( :"../customer_views/customers" )
 end
 
 get '/customers/:id' do #show specific customer
   @customer = Customers.find(params[:id])
-  erb(:show)
+  erb(:"customer_views/show")
 end
 
 get '/customers/new' do #go to add a new customer page
-  erb( :new_customer )
+  erb( :"customer_views/new_customer" )
 end
 
 post '/customers' do #post new customer and show in customers page
@@ -34,7 +26,7 @@ end
 
 get '/customers/:id/edit' do #find (get) customer in order to update
   @customer = Customer.find(params[:id])
-  erb(:edit)
+  erb(:"customer_views/edit")
 end
 
 post '/customers/:id/update' do #(post) updates to existing customer
