@@ -2,30 +2,22 @@ require("minitest/autorun")
 require("minitest/rg")
 
 require_relative("../models/customer")
+require_relative("../models/stock")
 
 class TestCustomer < MiniTest::Test
 
-  def setup
-    options = {
-      "first_name" => "Bobby",
-      "last_name" => "Newport",
-      "email" => "bnewport@sweetums.com",
-      "tel_number" => "+447777777778"
-    }
-    @customer = Customer.new(options)
+  def test_find_cust_by_email
+    customer = Customer.find_by_email("bnewport@sweetums.com")
+    assert_equal("Bobby Newport", customer.full_name())
   end
 
-  def test_customer_has_email()
-    assert_equal("bnewport@sweetums.com", @customer.email )
+  def test_stock_has_been_rented
+    customer = Customer.find_by_email("bnewport@sweetums.com")
+    tuxedo = Stock.find(2)
+    tuxedo.rent_to_customer(customer.id)
+    cust_rentals = customer.rentals()
+    assert_equal(1, cust_rentals.count)
   end
-
-  def test_customer_update_phone_number()
-    @customer.tel_number = "447777777772" #give cust new telephone number
-    @customer.update() #update telephone number in db
-    # updated_customer = Customer.find_by_email("bnewport@sweetums.com") #find customer in db (using email as id can change)
-    # assert_equal("447777777772", updated_customer.tel_number)
-  end
-
 
 
 end

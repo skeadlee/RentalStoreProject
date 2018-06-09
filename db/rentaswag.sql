@@ -14,12 +14,11 @@ CREATE TABLE stock (
   id SERIAL PRIMARY KEY,
   type VARCHAR(255),
   colour VARCHAR(255),
-  price INT4,
-  quantity INT4
+  price INT4
 );
 
 CREATE TABLE rentals (
   id SERIAL PRIMARY KEY,
   customer_id INT4 REFERENCES customers(id),
-  stock_id INT4 REFERENCES stock(id),
+  stock_id INT4 REFERENCES stock(id)
 );

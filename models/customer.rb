@@ -64,12 +64,12 @@ class Customer
     SqlRunner.run(sql)
   end
 
-  # def rentals() returns an array of rentals for a specific customer???
-  #   sql = "SELECT * FROM rentals WHERE customer_id = $1"
-  #   values = [@id]
-  #   results = SqlRunner.run( sql, values )
-  #   rentals = results.map { |item| Stock.new( item ) }
-  #   return orders
-  # end
+  def rentals() #returns an array of rentals for a specific customer
+    sql = "SELECT * FROM rentals WHERE customer_id = $1"
+    values = [@id]
+    results = SqlRunner.run( sql, values )
+    rentals = results.map { |item| Stock.new( item ) }
+    return rentals
+  end
 
 end

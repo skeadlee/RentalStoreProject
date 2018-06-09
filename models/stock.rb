@@ -8,14 +8,14 @@ class Stock
     @id = options['id'].to_i
     @type = options['type']
     @colour = options['colour']
-  #  @size = options['size']
+    #@size = options['size']
     @price = options['price'].to_i
-    @quantity = options['quantity'].to_i
+    #@quantity = options['quantity'].to_i
   end
 
   def save() #save stock item to database
-    sql = "INSERT INTO stock (type, colour, price, quantity) VALUES ($1, $2, $3, $4) RETURNING *"
-    values = [@type, @colour, @price, @quantity]
+    sql = "INSERT INTO stock (type, colour, price) VALUES ($1, $2, $3) RETURNING *"
+    values = [@type, @colour, @price]
     stock_data = SqlRunner.run(sql, values)
     @id = stock_data.first()['id'].to_i
   end
@@ -37,8 +37,8 @@ class Stock
   end
 
   def update() #updates stock details in database
-    sql = "UPDATE stock SET (type, colour, price, quantity) = ($1, $2, $3, $4) WHERE id = $5"
-    values = [@type, @colour, @price, @quantity, @id]
+    sql = "UPDATE stock SET (type, colour, price) = ($1, $2, $3) WHERE id = $4"
+    values = [@type, @colour, @price, @id]
     SqlRunner.run( sql, values )
   end
 
@@ -53,13 +53,20 @@ class Stock
     SqlRunner.run(sql)
   end
 
-  def customer() #returns a Customer object, an instance of the Customer class
-    sql = "SELECT * FROM customers WHERE id = $1"
-    values = [@customer_id]
-    results = SqlRunner.run( sql, values )
-    customer_data = results[0]
-    customer = Customer.new( customer_data )
-    return customer
+  def is_available() #checks if item is avalable for rentals
+    sql = "SELECT * FROM rentals WHERE stock_id = $1"
+    values = [@id]
+    rental_data = SqlRunner.run( sql, values)
+    return rental_data.count == 0 #if returns 0 from rentals, then item available for rental as not currently hired
+  end
+
+  def rent_to_customer(customer_id) #rent an item of stock to a customer if available
+    if is_available()
+      sql = "INSERT INTO rentals (customer_id, stock_id) VALUES ($1, $2) RETURNING *"
+      values = [customer_id, @id]
+      rental_data = SqlRunner.run(sql, values)
+      return rental_data.first()['id'].to_i
+    end
   end
 
 end
