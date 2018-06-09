@@ -1,1 +1,18 @@
 <h1>Customers</h1>
+
+ <% for customer in @customers %>
+   <p>Name: <%= customer.full_name() %></p>
+   <p>Email: <%= customer.email %></p>
+   <p>Tel: <%= customer.tel_number %></p>
+
+
+ <form method="post" action="/customers/<%= customer.id %>/delete">
+   <input name="_method" type="hidden" value="delete">
+   <input type="submit" value="Delete Customer">
+ </form>
+
+ <form method="get" action="/customers/<%= customer.id %>/edit">
+   <input type="submit" value="Update Existing Customer">
+ </form>
+
+ <% end %>

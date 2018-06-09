@@ -1,0 +1,12 @@
+<p>First name: <%= @customer.first_name %></p>
+<p>Last name: <%= @customer.last_name %></p>
+<p>Email: <%= @customer.email %></p>
+<p>Tel: <%= @customer.tel_number %></p>
+
+<form method="delete" action="/customers/<%= @customer.id %>/delete">
+  <input type="submit" value="Delete Customer">
+</form>
+
+<form method="get" action="/customers/<%= @customer.id %>/edit">
+  <input type="submit" value="Update Existing Customer">
+</form>
