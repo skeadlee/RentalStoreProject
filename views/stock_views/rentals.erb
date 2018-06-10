@@ -6,4 +6,8 @@
   <p>Colour: <%= rental.colour %></p>
   <p>Price: <%= rental.price %></p>
 
+  <form method="post" action="/stock/<%= rental.id %>/return">
+    <input type="submit" value="Return Item To Stock">
+  </form>
+
 <% end %>

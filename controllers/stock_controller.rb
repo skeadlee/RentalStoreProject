@@ -51,3 +51,9 @@ post '/stock/:id/rent' do #if item isn't available to hire, displays message.
     erb(:"stock_views/no_stock")
   end
 end
+
+post '/stock/:id/return' do #deletes rented item from rented items
+  @stock = Stock.find(params[:id])
+  @stock.return_rental_to_stock()
+  redirect to '/stock/rentals'
+end

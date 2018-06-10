@@ -70,11 +70,16 @@ class Stock
   end
 
   def self.rentals() #returns an array of all the stock currently rented - Stock.rentals()
-    sql = "SELECT * FROM stock INNER JOIN rentals ON stock.id = rentals.stock_id"
+    sql = "SELECT stock.* FROM stock INNER JOIN rentals ON stock.id = rentals.stock_id"
     results = SqlRunner.run( sql )
     rentals = results.map { |item| Stock.new( item ) }
     return rentals
   end
 
+  def return_rental_to_stock() #restores rental item from customer to stock
+    sql = "DELETE FROM rentals WHERE stock_id = $1"
+    values = [@id]
+    SqlRunner.run( sql, values)
+  end
 
 end
