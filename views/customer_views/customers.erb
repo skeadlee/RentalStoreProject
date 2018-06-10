@@ -1,5 +1,7 @@
 <h1>Customers</h1>
 
+<a href="/customers/new">Create New Customer</a>
+
  <% for customer in @customers %>
    <p>Name: <%= customer.full_name() %></p>
    <p>Email: <%= customer.email %></p>
@@ -7,7 +9,6 @@
 
 
  <form method="post" action="/customers/<%= customer.id %>/delete">
-   <input name="_method" type="hidden" value="delete">
    <input type="submit" value="Delete Customer">
  </form>
 
