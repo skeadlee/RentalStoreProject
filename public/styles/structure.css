@@ -1,0 +1,33 @@
+body {
+  background: black url('/images/background.jpeg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+div.wrapper {
+  background-color: #424C55;
+  color: black;
+  opacity: 0.7;
+  text-align: center;
+}
+
+.container {
+  justify-content: center;
+  display: inline-flex;
+  align-content: flex-start;
+  width: 100%;
+  background-color: #424C55;
+  opacity: 0.7;
+}
+
+.container a:visited{
+  color: #D8E4FF;
+}
+
+.container a {
+  color: #6B818C;
+}
+
+h1 {
+  font-size: xx-large;
+}

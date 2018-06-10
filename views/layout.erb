@@ -5,19 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Rent-A-Swag</title>
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/styles/structure.css">
 </head>
 <body>
+
   <nav>
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/customers">View Customers</a></li>
-      <li><a href="/stock">View Stock</a></li>
-      <li><a href="/stock/rentals">View Rentals</a></li>
-    </ul>
+    <div class="container">
+      <div><a href="/">Home</a></div>
+      <div><a href="/customers">View Customers</a></div>
+      <div><a href="/stock">View Stock</a></div>
+      <div><a href="/stock/rentals">View Rentals</a></div>
+    </div>
   </nav>
 
-  <%= yield %>
+  <div class="wrapper">
+    <%= yield %>
+  </div>
 
 </body>
 </html>
