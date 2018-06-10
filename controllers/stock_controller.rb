@@ -1,0 +1,5 @@
+require('sinatra')
+require('sinatra/contrib/all')
+require('pry')
+require_relative('../models/stock')
+also_reload('../models/*')

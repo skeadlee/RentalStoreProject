@@ -6,7 +6,7 @@ also_reload('../models/*')
 
 get '/customers' do #view all customers
   @customers = Customer.all()
-  erb( :"../customer_views/customers" )
+  erb( :"/customer_views/customers" )
 end
 
 get '/customers/:id' do #show specific customer
