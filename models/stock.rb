@@ -42,9 +42,9 @@ class Stock
     SqlRunner.run( sql, values )
   end
 
-  def delete() #delete a specific item of stock
+  def self.delete(id) #delete a specific item of stock - Stock.delete(id)
     sql = "DELETE FROM stock WHERE id = $1"
-    values = [@id]
+    values = [id]
     SqlRunner.run( sql, values )
   end
 
@@ -68,5 +68,13 @@ class Stock
       return rental_data.first()['id'].to_i
     end
   end
+
+  def self.rentals() #returns an array of all the stock currently rented - Stock.rentals()
+    sql = "SELECT * FROM stock INNER JOIN rentals ON stock.id = rentals.stock_id"
+    results = SqlRunner.run( sql )
+    rentals = results.map { |item| Stock.new( item ) }
+    return rentals
+  end
+
 
 end

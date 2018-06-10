@@ -21,3 +21,33 @@ post '/stock' do #create new item of stock and show in stock page
   @stock.save()
   redirect '/stock'
 end
+
+get '/stock/rentals' do #view all rentals
+  @rented_stock = Stock.rentals()
+  erb( :"stock_views/rentals")
+end
+
+get '/stock/:id' do #show specific item of stock
+  @stock = Stock.find(params[:id])
+  erb(:"stock_views/show")
+end
+
+get '/stock/:id/edit' do #find stock in order to complete an action on it
+  @stock = Stock.find(params[:id])
+  erb(:"stock_views/edit")
+end
+
+post '/stock/:id/delete' do #delete an individual item of stock
+  Stock.delete(params[:id])
+  redirect to '/stock'
+end
+
+post '/stock/:id/rent' do #if item isn't available to hire, displays message.
+  @stock = Stock.find(params[:id])
+  if @stock.is_available
+    @stock.rent_to_customer(params[:customer_id])
+    redirect to '/customers/'+params[:customer_id]
+  else
+    erb(:"stock_views/no_stock")
+  end
+end

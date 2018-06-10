@@ -1,15 +1,19 @@
 <h1>Stock</h1>
 
+<a href="/stock/new">Create New Stock Item</a>
+
 <% for stock in @stock %>
   <p>Type: <%= stock.type() %></p>
   <p>Colour: <%= stock.colour %></p>
   <p>Price: <%= stock.price %></p>
 
+  <a href="/stock/<%= stock.id %>">View Stock Item</a>
 
-<form method="post" action="/stock/<%= stock.id %>/delete">
-  <input name="_method" type="hidden" value="delete">
-  <input type="submit" value="Delete Stock Item">
-</form>
+
+
+  <form method="post" action="/stock/<%= stock.id %>/delete">
+    <input type="submit" value="Delete Stock Item">
+  </form>
 
 
 <% end %>

@@ -1,0 +1,9 @@
+<h1>All Rentals</h1>
+
+
+<% for rental in @rented_stock %>
+  <p>Type: <%= rental.type  %></p>
+  <p>Colour: <%= rental.colour %></p>
+  <p>Price: <%= rental.price %></p>
+
+<% end %>

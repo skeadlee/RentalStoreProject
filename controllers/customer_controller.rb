@@ -14,7 +14,7 @@ get '/customers/new' do #go to add a new customer page
 end
 
 get '/customers/:id' do #show specific customer
-  @customer = Customers.find(params[:id])
+  @customer = Customer.find(params[:id])
   erb(:"customer_views/show")
 end
 
@@ -46,6 +46,8 @@ end
 #   redirect to '/customers'
 # end
 
-get '/rentals' do #view all rentals
-  erb( :rentals)
+get '/customers/:id/rentals' do #find/view a specific customers rentals
+  @customer = Customer.find(params[:id])
+  @rentals = @customer.rentals()
+  erb(:"customer_views/rentals")
 end

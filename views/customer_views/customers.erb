@@ -3,17 +3,8 @@
 <a href="/customers/new">Create New Customer</a>
 
  <% for customer in @customers %>
-   <p>Name: <%= customer.full_name() %></p>
+   <p><a href="/customers/<%= customer.id %>">Name: <%= customer.full_name() %></a></p>
    <p>Email: <%= customer.email %></p>
    <p>Tel: <%= customer.tel_number %></p>
-
-
- <form method="post" action="/customers/<%= customer.id %>/delete">
-   <input type="submit" value="Delete Customer">
- </form>
-
- <form method="get" action="/customers/<%= customer.id %>/edit">
-   <input type="submit" value="Update Existing Customer">
- </form>
 
  <% end %>

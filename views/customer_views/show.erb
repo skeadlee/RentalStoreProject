@@ -3,7 +3,9 @@
 <p>Email: <%= @customer.email %></p>
 <p>Tel: <%= @customer.tel_number %></p>
 
-<form method="delete" action="/customers/<%= @customer.id %>/delete">
+<a href="/customers/<%= @customer.id %>/rentals">View Rentals for <%= @customer.full_name %> </a>
+
+<form method="post" action="/customers/<%= @customer.id %>/delete">
   <input type="submit" value="Delete Customer">
 </form>
 
