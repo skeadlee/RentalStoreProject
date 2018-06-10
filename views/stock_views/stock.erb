@@ -6,6 +6,15 @@
   <p>Type: <%= stock.type() %></p>
   <p>Colour: <%= stock.colour %></p>
   <p>Price: <%= stock.price %></p>
+  <p>Status:
+  <%=
+    if stock.rented_customer_id.to_s.empty?
+      "Available"
+    else
+      "Rented"
+    end
+  %>
+  </p>
 
   <a href="/stock/<%= stock.id %>">View Stock Item</a>
 

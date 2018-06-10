@@ -5,6 +5,7 @@
   <p>Type: <%= rental.type  %></p>
   <p>Colour: <%= rental.colour %></p>
   <p>Price: <%= rental.price %></p>
+  <p><a href="/customers/<%= rental.rented_customer_id %>">View Customer</a></p>
 
   <form method="post" action="/stock/<%= rental.id %>/return">
     <input type="submit" value="Return Item To Stock">

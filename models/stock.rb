@@ -2,7 +2,7 @@ require_relative('../db/sqlRunner')
 
 class Stock
 
-  attr_accessor :id, :type, :colour, :size, :price, :quantity
+  attr_accessor :id, :type, :colour, :size, :price, :quantity, :rented_customer_id
 
   def initialize( options )
     @id = options['id'].to_i
@@ -11,6 +11,7 @@ class Stock
     #@size = options['size']
     @price = options['price'].to_i
     #@quantity = options['quantity'].to_i
+    @rented_customer_id = options['rented_customer_id']
   end
 
   def save() #save stock item to database
@@ -21,7 +22,7 @@ class Stock
   end
 
   def self.all() #view all stock - Stock.all()
-    sql = "SELECT * FROM stock"
+    sql = "SELECT stock.*, rentals.customer_id AS rented_customer_id FROM stock LEFT JOIN rentals ON stock.id = rentals.stock_id"
     stock_items = SqlRunner.run( sql )
     result = stock_items.map { |stock| Stock.new( stock ) }
     return result
@@ -70,7 +71,7 @@ class Stock
   end
 
   def self.rentals() #returns an array of all the stock currently rented - Stock.rentals()
-    sql = "SELECT stock.* FROM stock INNER JOIN rentals ON stock.id = rentals.stock_id"
+    sql = "SELECT stock.id, stock.type, stock.colour, stock.price, customers.id AS rented_customer_id FROM stock INNER JOIN rentals ON stock.id = rentals.stock_id INNER JOIN customers ON customers.id = rentals.customer_id"
     results = SqlRunner.run( sql )
     rentals = results.map { |item| Stock.new( item ) }
     return rentals
