@@ -1,6 +1,6 @@
 <p>Type: <%= @stock.type %></p>
 <p>Colour: <%= @stock.colour %></p>
-<p>Price: <%= @stock.price %></p>
+<p>Rental Price: <%= @stock.price %></p>
 
 <form method="post" action="/stock/<%= @stock.id %>/rent">
   <input type="text" value="" name="customer_id">

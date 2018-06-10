@@ -40,25 +40,25 @@ customer4.save()
 stock_item1 = Stock.new({
   "type" => "Tuxedo",
   "colour" => "Claret",
-  "price" => 60
+  "price" => 50
 })
 
 stock_item2 = Stock.new({
   "type" => "Tuxedo",
   "colour" => "Peacock",
-  "price" => 70
+  "price" => 55
 })
 
 stock_item3 = Stock.new({
   "type" => "Lounge Suit",
   "colour" => "Silver",
-  "price" => 50
+  "price" => 40
 })
 
 stock_item4 = Stock.new({
   "type" => "Lounge Suit",
   "colour" => "Ice Blue",
-  "price" => 55
+  "price" => 45
 })
 
 stock_item1.save()
