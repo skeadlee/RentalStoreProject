@@ -1,12 +1,14 @@
-<p>Type: <%= @stock.type %></p>
-<p>Colour: <%= @stock.colour %></p>
-<p>Rental Price: <%= @stock.price %></p>
+<div class="pageContents">
+  <p>Type: <%= @stock.type %></p>
+  <p>Colour: <%= @stock.colour %></p>
+  <p>Rental Price: <%= @stock.price %></p>
 
-<form method="post" action="/stock/<%= @stock.id %>/rent">
-  <input type="text" value="" name="customer_id">
-  <input type="submit" value="Assign Stock To Customer">
-</form>
+  <form method="post" action="/stock/<%= @stock.id %>/rent">
+    <input type="text" value="" name="customer_id">
+    <input type="submit" value="Assign Stock To Customer">
+  </form>
 
-<form method="delete" action="/stock/<%= @stock.id %>/delete">
-  <input type="submit" value="Delete Stock Item">
-</form>
+  <form method="delete" action="/stock/<%= @stock.id %>/delete">
+    <input type="submit" value="Delete Stock Item">
+  </form>
+</div>

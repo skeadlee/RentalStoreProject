@@ -1,14 +1,16 @@
-<p>First name: <%= @customer.first_name %></p>
-<p>Last name: <%= @customer.last_name %></p>
-<p>Email: <%= @customer.email %></p>
-<p>Tel: <%= @customer.tel_number %></p>
+<div class="pageContents">
+  <p>First name: <%= @customer.first_name %></p>
+  <p>Last name: <%= @customer.last_name %></p>
+  <p>Email: <%= @customer.email %></p>
+  <p>Tel: <%= @customer.tel_number %></p>
 
-<a href="/customers/<%= @customer.id %>/rentals">View Rentals for <%= @customer.full_name %> </a>
+  <a href="/customers/<%= @customer.id %>/rentals">View Rentals for <%= @customer.full_name %> </a>
 
-<form method="post" action="/customers/<%= @customer.id %>/delete">
-  <input type="submit" value="Delete Customer">
-</form>
+  <form method="post" action="/customers/<%= @customer.id %>/delete">
+    <input type="submit" value="Delete Customer">
+  </form>
 
-<form method="get" action="/customers/<%= @customer.id %>/edit">
-  <input type="submit" value="Update Existing Customer">
-</form>
+  <form method="get" action="/customers/<%= @customer.id %>/edit">
+    <input type="submit" value="Update Existing Customer">
+  </form>
+</div>

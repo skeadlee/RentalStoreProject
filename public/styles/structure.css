@@ -9,25 +9,41 @@ div.wrapper {
   color: black;
   opacity: 0.7;
   text-align: center;
+  max-height: 90%;
 }
 
 .container {
-  justify-content: center;
+  justify-content: space-around;
   display: inline-flex;
   align-content: flex-start;
   width: 100%;
   background-color: #424C55;
   opacity: 0.7;
-}
-
-.container a:visited{
-  color: #D8E4FF;
+  border-style: double;
 }
 
 .container a {
-  color: #6B818C;
+  color: #AEA3B0;
 }
 
 h1 {
   font-size: xx-large;
+}
+
+main p {
+  font-weight: bold;
+}
+
+
+div.stock {
+  align-content: space-between;
+  border-style: double;
+}
+
+div.pageTitle {
+  border-style: double;
+}
+
+div.pageContents {
+  border-style: double;
 }

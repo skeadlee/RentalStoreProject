@@ -1,15 +1,17 @@
-<form method="post" action="/customers/<%=@customer.id%>/update">
-  <label for="first_name">First Name:</label>
-  <input id="first_name" type="text" name="first_name" value="<%=@customer.first_name%>"/>
+<div class="pageContents">
+  <form method="post" action="/customers/<%=@customer.id%>/update">
+    <label for="first_name">First Name:</label>
+    <input id="first_name" type="text" name="first_name" value="<%=@customer.first_name%>"/>
 
-  <label for="last_name">Last Name:</label>
-  <input id="last_name" type="text" name="last_name" value="<%=@customer.last_name%>"/>
+    <label for="last_name">Last Name:</label>
+    <input id="last_name" type="text" name="last_name" value="<%=@customer.last_name%>"/>
 
-  <label for="email">Email:</label>
-  <input id="email" type ="text" name="email" value="<%=@customer.email%>"/>
+    <label for="email">Email:</label>
+    <input id="email" type ="text" name="email" value="<%=@customer.email%>"/>
 
-  <label for="tel_number">Tel:</label>
-  <input id="tel_number" type ="number" name="tel_number" value="<%=@customer.tel_number%>"/>
+    <label for="tel_number">Tel:</label>
+    <input id="tel_number" type ="number" name="tel_number" value="<%=@customer.tel_number%>"/>
 
-  <input type="submit" value="Submit Updates"/>
-</form>
+    <input type="submit" value="Submit Updates"/>
+  </form>
+</div>
