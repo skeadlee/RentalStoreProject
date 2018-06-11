@@ -5,9 +5,10 @@ body {
 }
 
 div.wrapper {
+  margin-top: 5%;
   background-color: #424C55;
   color: black;
-  opacity: 0.7;
+  opacity: 0.6;
   text-align: center;
   max-height: 90%;
 }
@@ -20,6 +21,7 @@ div.wrapper {
   background-color: #424C55;
   opacity: 0.7;
   border-style: double;
+  padding: 5px;
 }
 
 .container a {
@@ -46,6 +48,7 @@ div.pageTitle {
 
 div.pageContents {
   border-style: double;
+  font-weight: bold;
 }
 
 div.wrapper.column {

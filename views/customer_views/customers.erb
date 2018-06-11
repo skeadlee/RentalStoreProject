@@ -7,7 +7,7 @@
 <a class="link" href="/customers/new">Create New Customer</a>
 
  <% for customer in @customers %>
-   <p>Name: <a href="/customers/<%= customer.id %>"><%= customer.full_name() %></a></p>
+   <p>Name: <a class="link" href="/customers/<%= customer.id %>"><%= customer.full_name() %></a></p>
    <p>Email: <%= customer.email %></p>
    <p>Tel: <%= customer.tel_number %></p>
 
