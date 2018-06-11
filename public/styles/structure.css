@@ -47,3 +47,11 @@ div.pageTitle {
 div.pageContents {
   border-style: double;
 }
+
+div.wrapper.column {
+  float: left;
+  flex: 50%;
+}
+a.link {
+  color: black;
+}

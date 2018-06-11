@@ -4,7 +4,7 @@
 
 <div class="pageContents">
 
-<a href="/customers/new">Create New Customer</a>
+<a class="link" href="/customers/new">Create New Customer</a>
 
  <% for customer in @customers %>
    <p>Name: <a href="/customers/<%= customer.id %>"><%= customer.full_name() %></a></p>
