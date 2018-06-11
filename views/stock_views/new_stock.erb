@@ -1,15 +1,24 @@
-<div class="pageContents">
-  <form method="post" action="/stock">
-    <label for="type">Type:</label>
-    <input id="type" type="text" name="type"/>
+<div class="pageTitle">
+  <h1>Create New Rental Item</h1>
+</div
 
-    <label for="colour">Colour:</label>
-    <input id="colour" type="text" name="colour"/>
+  <div class="pageContents">
+    <form method="post" action="/stock">
+      <div class="formRow">
+        <label for="type">Type:</label>
+        <input id="type" type="text" name="type"/>
+      </div>
+      <div class="formRow">
+        <label for="colour">Colour:</label>
+        <input id="colour" type="text" name="colour"/>
+      </div>
+      <div class="formRow">
+        <label for="price">Rental Price:</label>
+        <input id="price" type="text" name="price">
+      </div>
+      <div class="formRow">
+        <input type="submit" value="Submit New Stock Item"/>
+      </div>
 
-    <label for="price">Rental Price:</label>
-    <input id="price" type="text" name="price">
-
-    <input type="submit" value="Submit New Stock Item"/>
-
-  </form>
-</div>
+    </form>
+  </div>

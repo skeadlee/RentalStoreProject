@@ -4,13 +4,17 @@
 
 <div class="pageContents">
 
-<a class="link" href="/customers/new">Create New Customer</a>
+  <div>
+    <a class="link" href="/customers/new">Create New Customer</a>
+  </div>
 
- <% for customer in @customers %>
-   <p>Name: <a class="link" href="/customers/<%= customer.id %>"><%= customer.full_name() %></a></p>
-   <p>Email: <%= customer.email %></p>
-   <p>Tel: <%= customer.tel_number %></p>
+  <% for customer in @customers %>
+  <div class="stock customer">
+    <p>Name: <a class="link" href="/customers/<%= customer.id %>"><%= customer.full_name() %></a></p>
+    <p>Email: <%= customer.email %></p>
+    <p>Tel: <%= customer.tel_number %></p>
+  </div>
 
- <% end %>
+  <% end %>
 
 </div>

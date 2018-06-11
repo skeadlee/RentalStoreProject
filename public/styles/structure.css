@@ -13,6 +13,14 @@ div.wrapper {
   max-height: 90%;
 }
 
+div.wrapper div.pageTitle h1 {
+  opacity: 1;
+}
+
+div.home div.pageTitle {
+  background-color: white;
+}
+
 .container {
   justify-content: space-around;
   display: inline-flex;
@@ -21,7 +29,7 @@ div.wrapper {
   background-color: #424C55;
   opacity: 0.7;
   border-style: double;
-  padding: 5px;
+  padding: 8px;
 }
 
 .container a {
@@ -40,6 +48,15 @@ main p {
 div.stock {
   align-content: space-between;
   border-style: double;
+  display: inline-block;
+  background-color: white;
+  padding: 5px;
+  margin: 5px;
+}
+
+div.customer {
+  width: 250px;
+  height:  130px;
 }
 
 div.pageTitle {
@@ -55,6 +72,27 @@ div.wrapper.column {
   float: left;
   flex: 50%;
 }
+
+div.custShow {
+  align-content: space-between;
+  border-style: double;
+  background-color: white;
+  padding: 5px;
+  margin: 5px;
+  width: 40%;
+  display: inline-block;
+}
+
 a.link {
-  color: black;
+  color: #AEA3B0;
+}
+
+.formRow label {
+  width: 111px;
+  display: inline-block;
+  text-align: left;
+}
+
+.formRow input {
+  display: inline-block;
 }

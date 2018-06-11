@@ -1,19 +1,27 @@
+<div class="pageTitle">
+  <h1>Create New Customer</h1>
+</div>
+
 <div class="pageContents">
   <form method="post" action="/customers">
-
-    <label for="first_name">First Name:</label>
-    <input id="first_name" type="text" name="first_name"/>
-
-    <label for="last_name">Last Name:</label>
-    <input id="last_name" type="text" name="last_name"/>
-
-    <label for="email">Email:</label>
-    <input id="email" type="text" name="email">
-
-    <label for="tel_number">Telephone Number:</label>
-    <input id="tel_number" type="number" name="tel_number"/>
-
-    <input type="submit" value="Submit New Customer"/>
-
+    <div class="formRow">
+      <label for="first_name">First Name:</label>
+      <input id="first_name" type="text" name="first_name"/>
+    </div>
+    <div class="formRow">
+      <label for="last_name">Last Name:</label>
+      <input id="last_name" type="text" name="last_name"/>
+    </div>
+    <div class="formRow">
+      <label for="email">Email:</label>
+      <input id="email" type="text" name="email">
+    </div>
+    <div class="formRow">
+      <label for="tel_number">Tel:</label>
+      <input id="tel_number" type="number" name="tel_number"/>
+    </div>
+    <div class="formRow">
+      <input type="submit" value="Submit New Customer"/>
+    </div>
   </form>
 </div>

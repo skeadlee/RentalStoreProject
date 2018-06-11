@@ -1,33 +1,35 @@
 <div class="pageTitle">
-<h1>Stock</h1>
+  <h1>Stock</h1>
 </div>
 
 <div class="pageContents column" >
 
-  <a class="link" href="/stock/new">Create New Stock Item</a>
-
+  <div>
+    <a class="link" href="/stock/new">Create New Stock Item</a>
+  </div>
   <% for stock in @stock %>
-  <p>Type: <%= stock.type() %></p>
-  <p>Colour: <%= stock.colour %></p>
-  <p>Rental Price: £<%= stock.price %></p>
-  <p>Status:
-    <%=
-    if stock.rented_customer_id.to_s.empty?
-      "Available"
-    else
-      "Rented"
-    end
-    %>
-  </p>
+  <div class="stock">
+    <p>Type: <%= stock.type() %></p>
+    <p>Colour: <%= stock.colour %></p>
+    <p>Rental Price: £<%= stock.price %></p>
+    <p>Status:
+      <%=
+      if stock.rented_customer_id.to_s.empty?
+        "Available"
+      else
+        "Rented"
+      end
+      %>
+    </p>
 
-  <a class="link" href="/stock/<%= stock.id %>">View Stock Item</a>
-
-
-  <form method="post" action="/stock/<%= stock.id %>/delete">
-    <input type="submit" value="Delete Stock Item">
-  </form>
+    <a class="link" href="/stock/<%= stock.id %>">View Stock Item</a>
 
 
+    <form method="post" action="/stock/<%= stock.id %>/delete">
+      <input type="submit" value="Delete Stock Item">
+    </form>
 
-<% end %>
+
+  </div>
+  <% end %>
 </div>
