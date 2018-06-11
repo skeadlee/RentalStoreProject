@@ -29,6 +29,7 @@ end
 
 get '/stock/:id' do #show specific item of stock
   @stock = Stock.find(params[:id])
+  @customers = Customer.all()
   erb(:"stock_views/show")
 end
 

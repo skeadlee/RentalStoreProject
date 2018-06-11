@@ -5,7 +5,12 @@
     <p>Rental Price: £<%= @stock.price %></p>
 
     <form method="post" action="/stock/<%= @stock.id %>/rent">
-      <input type="text" value="" name="customer_id">
+      <label for="assignToCust">Assign To Customer:</label>
+      <select name="customer_id" id="customer_id">
+        <% @customers.each do |customer| %>
+        <option value=<%= customer.id %>><%= customer.last_name %></option>
+        <% end %>
+      </select>
       <input type="submit" value="Assign Stock To Customer">
     </form>
 
