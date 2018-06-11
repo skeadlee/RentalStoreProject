@@ -1,21 +1,35 @@
+<div class="pageTitle">
+  <h1>Assign To Customer</h1>
+</div>
+
+
 <div class="pageContents">
   <div class="stock">
     <p>Type: <%= @stock.type %></p>
     <p>Colour: <%= @stock.colour %></p>
     <p>Rental Price: £<%= @stock.price %></p>
 
-    <form method="post" action="/stock/<%= @stock.id %>/rent">
-      <label for="assignToCust">Assign To Customer:</label>
-      <select name="customer_id" id="customer_id">
-        <% @customers.each do |customer| %>
-        <option value=<%= customer.id %>><%= customer.last_name %></option>
-        <% end %>
-      </select>
-      <input type="submit" value="Assign Stock To Customer">
-    </form>
-
-    <form method="delete" action="/stock/<%= @stock.id %>/delete">
-      <input type="submit" value="Delete Stock Item">
-    </form>
-  </div>
-</div>
+    <div>
+      <form method="post" action="/stock/<%= @stock.id %>/rent">
+        <div class="formRow">
+          <label for="assignToCust">Assign To:</label>
+          <select name="customer_id" id="customer_id">
+            <% @customers.each do |customer| %>
+            <option value=<%= customer.id %>><%= customer.last_name %></option>
+            <% end %>
+          </select>
+        </div>
+        <div class="formRow">
+          <input type="submit" value="Assign Stock To Customer">
+        </div>
+      </form>
+    </div>
+    <div>
+      <form method="delete" action="/stock/<%= @stock.id %>/delete">
+        <div class="formRow">
+          <input type="submit" value="Delete Stock Item">
+        </div>
+      </form>
+      <div>
+      </div>
+    </div>
