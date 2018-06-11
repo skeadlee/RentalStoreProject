@@ -3,7 +3,7 @@
 <a href="/customers/new">Create New Customer</a>
 
  <% for customer in @customers %>
-   <p><a href="/customers/<%= customer.id %>">Name: <%= customer.full_name() %></a></p>
+   <p>Name: <a href="/customers/<%= customer.id %>"><%= customer.full_name() %></a></p>
    <p>Email: <%= customer.email %></p>
    <p>Tel: <%= customer.tel_number %></p>
 
