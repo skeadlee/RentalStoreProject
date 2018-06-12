@@ -18,7 +18,7 @@ div.wrapper div.pageTitle h1 {
 }
 
 div.home div.pageTitle {
-  background-color: white;
+  background-color: antiquewhite;
 }
 
 .container {
@@ -33,7 +33,7 @@ div.home div.pageTitle {
 }
 
 .container a {
-  color: #AEA3B0;
+  color: antiquewhite;
 }
 
 h1 {
@@ -61,11 +61,13 @@ div.customer {
 
 div.pageTitle {
   border-style: double;
+  background: antiquewhite;
 }
 
 div.pageContents {
   border-style: double;
   font-weight: bold;
+  background-color: antiquewhite;
 }
 
 div.wrapper.column {
@@ -84,7 +86,9 @@ div.custShow {
 }
 
 a.link {
-  color: #AEA3B0;
+  color: cornflowerblue;
+  padding: 8px;
+  margin: 8px;
 }
 
 .formRow label {
@@ -95,4 +99,9 @@ a.link {
 
 .formRow input {
   display: inline-block;
+}
+
+div.formRow {
+  padding: 4px;
+  background: antiquewhite;
 }
