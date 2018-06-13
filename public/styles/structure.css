@@ -52,6 +52,7 @@ div.stock {
   background-color: white;
   padding: 5px;
   margin: 5px;
+  min-height: 200px;
 }
 
 div.customer {
