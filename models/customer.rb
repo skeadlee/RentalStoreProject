@@ -25,7 +25,7 @@ class Customer
   end
 
   def self.all() #view all customers - Customer.all()
-    sql = "SELECT * FROM customers"
+    sql = "SELECT * FROM customers ORDER BY last_name ASC"
     customers = SqlRunner.run( sql )
     result = customers.map { |customer| Customer.new( customer ) }
     return result
