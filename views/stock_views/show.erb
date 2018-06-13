@@ -25,7 +25,7 @@
       </form>
     </div>
     <div>
-      <form method="delete" action="/stock/<%= @stock.id %>/delete">
+      <form method="post" action="/stock/<%= @stock.id %>/delete">
         <div class="formRow">
           <input type="submit" value="Delete Stock Item">
         </div>
