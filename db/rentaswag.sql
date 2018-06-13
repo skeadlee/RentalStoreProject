@@ -19,6 +19,6 @@ CREATE TABLE stock (
 
 CREATE TABLE rentals (
   id SERIAL PRIMARY KEY,
-  customer_id INT4 REFERENCES customers(id),
+  customer_id INT4 REFERENCES customers(id) ON DELETE CASCADE,
   stock_id INT4 REFERENCES stock(id)
 );
