@@ -68,6 +68,7 @@ div.pageContents {
   border-style: double;
   font-weight: bold;
   background-color: antiquewhite;
+  padding-bottom: 20px;
 }
 
 div.wrapper.column {
