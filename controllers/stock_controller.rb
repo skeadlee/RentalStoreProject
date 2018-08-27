@@ -1,4 +1,5 @@
 require('sinatra')
+require('sinatra/contrib/all') if development?
 # require('sinatra/contrib/all')
 # require('pry')
 require_relative('../models/stock')
