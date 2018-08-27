@@ -3,7 +3,7 @@ require('sinatra/contrib/all') if development?
 # require('sinatra/contrib/all')
 # require('pry')
 require_relative('../models/customer')
-also_reload('../models/*')
+# also_reload('../models/*')
 
 get '/customers' do #view all customers
   @customers = Customer.all()

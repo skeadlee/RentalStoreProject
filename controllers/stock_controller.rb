@@ -3,7 +3,7 @@ require('sinatra/contrib/all') if development?
 # require('sinatra/contrib/all')
 # require('pry')
 require_relative('../models/stock')
-also_reload('../models/*')
+# also_reload('../models/*')
 
 
 #view all stock, create new stock, delete existing stock, assign stock to customer
